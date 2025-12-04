@@ -70,7 +70,6 @@ class MovieSessionListSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "show_time",
-            "cinema_hall",
             "movie_title",
             "cinema_hall_name",
             "cinema_hall_capacity"
