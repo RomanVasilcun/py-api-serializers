@@ -57,10 +57,6 @@ class MovieCreateSerializer(serializers.ModelSerializer):
 
 
 class MovieSessionListSerializer(serializers.ModelSerializer):
-    movie = serializers.PrimaryKeyRelatedField(queryset=Movie.objects.all())
-    cinema_hall = serializers.PrimaryKeyRelatedField(
-        queryset=CinemaHall.objects.all()
-    )
     movie_title = serializers.CharField(source="movie.title", read_only=True)
     cinema_hall_name = serializers.CharField(
         source="cinema_hall.name",
@@ -74,7 +70,6 @@ class MovieSessionListSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "show_time",
-            "movie",
             "cinema_hall",
             "movie_title",
             "cinema_hall_name",
